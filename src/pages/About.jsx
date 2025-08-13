@@ -7,7 +7,7 @@ import CodeIcon from '@mui/icons-material/Code';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 
 const techStack = [
-  'Java', 'React.js', 'Firebase', 'PHP', 'Android', 'Node.js', 'Material UI', 'Tailwind CSS'
+  'Java', 'React.js', 'Firebase', 'PHP', 'Android', 'Node.js', 'Material UI', 'Tailwind CSS','Bootstrap'
 ];
 
 const hobbies = [
@@ -60,7 +60,7 @@ export default function About() {
           }}
         >
           <Avatar
-            src="public/files/charlou.png"
+            src="/files/charlou.png"
             alt="Charlou Ybarley"
             sx={{
               width: 250,
@@ -88,7 +88,7 @@ export default function About() {
             {/* Social Links */}
             <Box sx={{ display: 'flex', gap: 3 }}>
               <Link
-                href="https://linkedin.com/in/yourprofile"
+                href="https://www.linkedin.com/in/ybarley-charlou-t-05b481286/"
                 target="_blank"
                 rel="noopener"
                 sx={{ color: '#66c0f4', '&:hover': { color: '#8bc53f' } }}
@@ -96,7 +96,7 @@ export default function About() {
                 <LinkedInIcon fontSize="large" />
               </Link>
               <Link
-                href="mailto:your.email@example.com"
+                href="mailto:ybarleycharlou04@gmail.com"
                 sx={{ color: '#66c0f4', '&:hover': { color: '#8bc53f' } }}
               >
                 <EmailIcon fontSize="large" />

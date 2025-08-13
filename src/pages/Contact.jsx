@@ -34,7 +34,7 @@ export default function Contact() {
           {/* LinkedIn */}
           <Grid item>
             <Link
-              href="https://www.linkedin.com/in/your-profile"
+              href="https://www.linkedin.com/in/ybarley-charlou-t-05b481286/"
               target="_blank"
               rel="noopener"
               color="inherit"
@@ -90,7 +90,7 @@ export default function Contact() {
           {/* GitHub */}
           <Grid item>
             <Link
-              href="https://github.com/Codesloth15e"
+              href="https://github.com/Codesloth15"
               target="_blank"
               rel="noopener"
               color="inherit"
