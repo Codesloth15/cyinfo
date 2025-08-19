@@ -1,19 +1,17 @@
-import { Container, Typography, Box, Avatar, Chip, Grid, Link } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import CodeIcon from '@mui/icons-material/Code';
-import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import { Container, Typography, Box, Avatar, Chip, Grid, Link, Divider } from '@mui/material';
+import { FaGithub, FaLinkedin, FaEnvelope, FaGamepad, FaCode, FaGlobeAmericas } from 'react-icons/fa';
 
-const techStack = [
-  'Java', 'React.js', 'Firebase', 'PHP', 'Android', 'Node.js', 'Material UI', 'Tailwind CSS','Bootstrap'
-];
+const techStack = {
+  Frontend: ['React.js', 'Material UI', 'Tailwind CSS', 'Bootstrap'],
+  Backend: ['Node.js', 'PHP', 'Firebase'],
+  Languages: ['Java', 'JavaScript'],
+  Mobile: ['Android'],
+};
 
 const hobbies = [
-  { icon: <SportsEsportsIcon sx={{ color: '#8bc53f' }} />, label: 'Gaming' },
-  { icon: <CodeIcon sx={{ color: '#66c0f4' }} />, label: 'Coding & Open Source' },
-  { icon: <TravelExploreIcon sx={{ color: '#f28c28' }} />, label: 'Travel & Exploration' },
+  { icon: <FaGamepad size={32} color="#8bc53f" />, label: 'Gaming' },
+  { icon: <FaCode size={32} color="#66c0f4" />, label: 'Coding & Open Source' },
+  { icon: <FaGlobeAmericas size={32} color="#f28c28" />, label: 'Travel & Exploration' },
 ];
 
 export default function About() {
@@ -27,10 +25,11 @@ export default function About() {
       }}
     >
       <Container maxWidth="md">
+        {/* Header */}
         <Typography
           variant="h3"
           sx={{
-             paddingTop: '100px',
+            paddingTop: '100px',
             fontWeight: 'bold',
             mb: 5,
             background: 'linear-gradient(to right, #66c0f4, #ffffff)',
@@ -43,6 +42,7 @@ export default function About() {
           About Me
         </Typography>
 
+        {/* Profile Section */}
         <Box
           sx={{
             display: 'flex',
@@ -53,10 +53,7 @@ export default function About() {
             borderRadius: 3,
             p: 4,
             boxShadow: '0 0 25px rgba(102, 192, 244, 0.5)',
-            transition: 'all 0.3s ease',
-            '&:hover': {
-              boxShadow: '0 0 40px rgba(102, 192, 244, 0.8)',
-            },
+            '&:hover': { boxShadow: '0 0 40px rgba(102, 192, 244, 0.8)' },
           }}
         >
           <Avatar
@@ -74,46 +71,33 @@ export default function About() {
 
           <Box sx={{ flex: 1 }}>
             <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.7 }}>
-              I’m Charlou Ybarley, a passionate fourth-year IT student specializing in Android and web app development. I
-              love crafting immersive, intuitive user experiences inspired by gaming platforms like Steam.
+              I’m Charlou Ybarley, a passionate fourth-year IT student specializing in Android and web app development.
+              My work is influenced by clean design and user-friendly experiences, much like the gaming platforms I admire.
             </Typography>
             <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.7 }}>
-              Skilled in Java, React.js, Firebase, PHP, and more, I’m always exploring new tools and technologies to create
-              modern, scalable applications.
+              With skills in Java, React.js, Firebase, and PHP, I enjoy creating applications that are modern, scalable, and impactful.
+              I adapt quickly to new technologies and continuously challenge myself through personal and academic projects.
             </Typography>
             <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.7 }}>
-              Outside of coding, I enjoy gaming, open source contributions, and traveling to find fresh inspiration.
+              Outside of coding, I find inspiration in gaming, open source contributions, and traveling to discover new perspectives.
             </Typography>
 
             {/* Social Links */}
             <Box sx={{ display: 'flex', gap: 3 }}>
-              <Link
-                href="https://www.linkedin.com/in/ybarley-charlou-t-05b481286/"
-                target="_blank"
-                rel="noopener"
-                sx={{ color: '#66c0f4', '&:hover': { color: '#8bc53f' } }}
-              >
-                <LinkedInIcon fontSize="large" />
+              <Link href="https://www.linkedin.com/in/ybarley-charlou-t-05b481286/" target="_blank" rel="noopener">
+                <FaLinkedin size={32} color="#66c0f4" />
               </Link>
-              <Link
-                href="mailto:ybarleycharlou04@gmail.com"
-                sx={{ color: '#66c0f4', '&:hover': { color: '#8bc53f' } }}
-              >
-                <EmailIcon fontSize="large" />
+              <Link href="mailto:ybarleycharlou04@gmail.com">
+                <FaEnvelope size={32} color="#66c0f4" />
               </Link>
-              <Link
-                href="https://github.com/Codesloth15"
-                target="_blank"
-                rel="noopener"
-                sx={{ color: '#66c0f4', '&:hover': { color: '#8bc53f' } }}
-              >
-                <GitHubIcon fontSize="large" />
+              <Link href="https://github.com/Codesloth15" target="_blank" rel="noopener">
+                <FaGithub size={32} color="#66c0f4" />
               </Link>
             </Box>
           </Box>
         </Box>
 
-        {/* Tech Stack Section */}
+        {/* Tech Stack */}
         <Box sx={{ mt: 8 }}>
           <Typography
             variant="h4"
@@ -128,27 +112,38 @@ export default function About() {
             Tech Stack
           </Typography>
 
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-            {techStack.map((tech) => (
-              <Chip
-                key={tech}
-                label={tech}
-                color="primary"
-                variant="outlined"
-                sx={{
-                  borderColor: '#8bc53f',
-                  color: '#8bc53f',
-                  fontWeight: 'bold',
-                  fontSize: '0.9rem',
-                  px: 2,
-                  py: 0.5,
-                }}
-              />
+          <Grid container spacing={3}>
+            {Object.entries(techStack).map(([category, items]) => (
+              <Grid item xs={12} sm={6} key={category}>
+                <Typography variant="h6" sx={{ color: '#8bc53f', mb: 1 }}>
+                  {category}
+                </Typography>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                  {items.map((tech) => (
+                    <Chip
+                      key={tech}
+                      label={tech}
+                      sx={{
+                        background: 'rgba(102,192,244,0.1)',
+                        borderColor: '#66c0f4',
+                        color: '#66c0f4',
+                        fontWeight: 'bold',
+                        fontSize: '0.85rem',
+                        '&:hover': {
+                          background: '#66c0f4',
+                          color: '#171a21',
+                        },
+                      }}
+                      variant="outlined"
+                    />
+                  ))}
+                </Box>
+              </Grid>
             ))}
-          </Box>
+          </Grid>
         </Box>
 
-        {/* Hobbies Section */}
+        {/* Hobbies */}
         <Box sx={{ mt: 8 }}>
           <Typography
             variant="h4"
@@ -162,7 +157,6 @@ export default function About() {
           >
             Hobbies & Interests
           </Typography>
-
           <Grid container spacing={3}>
             {hobbies.map(({ icon, label }) => (
               <Grid
@@ -174,7 +168,6 @@ export default function About() {
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  color: '#c7d5e0',
                   textAlign: 'center',
                 }}
               >

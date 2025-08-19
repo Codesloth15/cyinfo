@@ -18,37 +18,37 @@ import CloseIcon from '@mui/icons-material/Close';
 const certificates = [
   {
     title: 'INTENSIFYING DIGITAL CITIZENSHIP: Skills Training',
-    description: 'Basic Computer Operations, Netiquette, and Web Navigation — Facilitator: Ronald U. Wacas',
+    description: 'Basic Computer Operations, Netiquette, and Web Navigation — Facilitator',
     date: 'Oct 15-16, 2014',
     image: '/images/certificates/digital_citizenship.jpg', // Replace with actual image
   },
   {
     title: 'BPI TECHVOC Training Program',
-    description: '120 Hours Participant Training — Mary Catherine Santamaria',
+    description: '120 Hours Participant Training ',
     date: 'Aug 22 - Sep 14, 2023',
     image: '/files/BPI1.png',
   },
   {
     title: 'DICT-MAD006: Introduction to Android Application Development',
-    description: '8 Hours Participant — Mina Lyn C. Peralta',
+    description: '8 Hours Participant',
     date: 'May 7-8, 2024',
     image: '/files/DICT1.png',
   },
   {
     title: 'DICT-MAD009: Using Firebase as an Application Back End',
-    description: '8 Hours Participant — Mina Lyn C. Peralta',
+    description: '8 Hours Participant',
     date: 'May 7-8, 2024',
     image: '/files/DICT2.png',
   },
   {
     title: 'FOUNDATION OF COMPUTER EMERGENCY RESPONSE TEAM (FCERT) TRAINING',
-    description: '8 Hours Participant — Engr. Reynaldo T. Sy',
+    description: '8 Hours Participant ',
     date: 'Feb 6, 2024',
     image: '/files/DICT3.png',
   },
   {
     title: 'Cybersecurity Advocacy Awareness and Promotion of DICT-CAR Programs',
-    description: '8 Hours Participant — Engr. Reynaldo T. Sy',
+    description: '8 Hours Participant',
     date: 'Oct 24, 2024',
     image: '/files/DICT4.png',
   },
